@@ -1,0 +1,28 @@
+n = int(input("Enter the number of elements in the list: "))
+arr = []
+for i in range(0,n):
+    num = int(input())
+    arr.append(num)
+
+def lSearch(list,data):
+    for i in range(0,len(list)):
+        if i==data:
+            print("Data found at index {}".format(i))
+            print("Data is the element number {}".format(i+1))
+            break
+
+def biSearch(list,data):
+    start = 0
+    end = len(list)
+    l = sorted(list)
+
+    while 1:
+        mid = ((start+end)//2)
+        if data==l[mid]:
+            print("Data found at index {}".format(mid))
+            print("Data is the element number {}".format(mid+1))
+            break
+        elif data>l[mid]:
+            start = mid+1
+        else:
+            end = mid-1
